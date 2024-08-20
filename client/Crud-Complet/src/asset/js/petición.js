@@ -7,8 +7,9 @@ export const traerTareas = async ()=>{
     
 } 
 
-export const enviarTareas = async (data)=>{
-    const posteo = await fetch( API_Url , {method: 'POST',headers: {'Content-Type': 'application/json'},body: JSON.stringify({data})});
+export const enviarTareas = async (datosTareas)=>{
+    const posteo = await fetch( API_Url , {method: 'POST',headers: {'Content-Type': 'application/json'}, body: JSON.stringify(datosTareas)});
     const respuest  = await posteo.json();
+    console.log(datosTareas);
     console.log(respuest);
     }
