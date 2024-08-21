@@ -90,3 +90,6 @@ th {
   background-color: #f4f4f4;
   color: #242424;
 }
+#task-table-body tr td{
+  color: black;
+}

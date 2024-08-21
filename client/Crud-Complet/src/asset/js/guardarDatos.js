@@ -1,4 +1,4 @@
-import { enviarTareas } from "./petición";
+import { enviarTareas, traerTareas } from "./petición";
 
 var datos = {
     nombre: "",
@@ -8,7 +8,7 @@ var datos = {
 
 
 export const guardado = (element)=>{
-    element.addEventListener('submit',()=>{
+    element.addEventListener('submit',async ()=>{
         event.preventDefault()
         const nombre = document.getElementById('task-name');
         const description = document.getElementById('task-description');
@@ -16,9 +16,8 @@ export const guardado = (element)=>{
         datos.completadad = isComplet.checked;
         datos.descripción = description.value;
         datos.nombre = nombre.value;
-        console.log(datos);
-        
-    enviarTareas(datos);
+        await enviarTareas(datos);
+        traerTareas()
     
         
     })

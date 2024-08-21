@@ -1,6 +1,6 @@
 import './src/asset/style/style.css';
 import './src/asset/js/petición.js'
-import { enviarTareas, traerTareas } from './src/asset/js/petición.js';
+import { traerTareas } from './src/asset/js/petición.js';
 import { guardado } from './src/asset/js/guardarDatos.js';
 
 document.querySelector('#app').innerHTML = `
@@ -21,7 +21,6 @@ document.querySelector('#app').innerHTML = `
                 </tr>
             </thead>
             <tbody id="task-table-body">
-                <!-- Las tareas se agregarán aquí -->
             </tbody>
         </table>`
 traerTareas();
